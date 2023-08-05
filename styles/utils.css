@@ -1,0 +1,101 @@
+ /* 
+ the purpose of the utils.css file is for us to 
+ add utility classes for CSS rules or components we use often 
+ */
+
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    background-color: var(--clr-rose);
+    color: #f1f5f9;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(225, 29, 72, 0.5),
+      0 6px 6px rgba(225, 29, 72, 0.5), 0 0 100px -10px var(--clr-rose);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(225, 29, 72, 0.25),
+        0 10px 10px rgba(225, 29, 72, 0.22), 0 0 120px -10px var(--clr-rose);
+}
+
+.container {
+    /* since default is device sizes < 320px, this is too small, so width is 100% */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.section {
+    margin-top: 5rem;
+}
+
+.loading {
+    filter: blur(40px) grayscale(100%);
+}
+
+.loaded {
+    filter: blur(0) grayscale(0);
+    transition: 0.7s ease-in-out;
+}
+
+/* 
+this architecture is called mobile first: 
+Styles outside of the media queries are for default Styles 
+and for screens smaller than 320 pixels.
+
+if we wanted to build a desktop first we would replace Min width 
+on each of the media queries to Max with and the 
+Styles outside of the media queries would apply styles 
+for screens larger than our last media query of 1536 pixels
+*/
+
+/* 
+source for breakpoints:
+https://www.solodev.com/blog/web-design/media-queries-and-mobile-css-best-practices.stml
+*/
+
+/* xs (smaller phone viewpoints) */
+@media (min-width: 320px) {
+    .container {
+        max-width: 320px;
+    }
+}
+
+/* sm (small devices and most phones) */
+@media (min-width: 480px) {
+    .container {
+        max-width: 480px;
+    }
+}
+
+/* md (most tablets) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+/* lg (smaller desktop viewpoints) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 992px;
+    }
+
+    .section {
+        margin-top: 10rem;
+    }
+}
+
+/* xl (large devices and wide screens) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
